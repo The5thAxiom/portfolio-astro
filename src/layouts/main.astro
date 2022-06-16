@@ -4,11 +4,15 @@ import '../styles/theme.css';
 import BackgroundShapes from '../components/backgroundShapes.astro';
 import SideLinks from '../components/sideLinks';
 import Navigation from '../components/navigation.astro';
+export type Props = {
+    title: string;
+};
+const { title } = Astro.props;
 ---
 
 <html lang={'en'}>
     <head>
-        <title>Portfolio!?</title>
+        <title>{title}</title>
     </head>
     <body>
         <BackgroundShapes />
