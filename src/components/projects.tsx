@@ -4,7 +4,7 @@ import { GithubIcon, ExplorerIcon } from '../components/icons';
 
 type project = {
     name: string;
-    about: React.Element;
+    about: JSX.Element;
     githubLink: string;
     directLink: string | null;
 };

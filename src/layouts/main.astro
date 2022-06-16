@@ -3,7 +3,7 @@ import '../styles/globals.css';
 import '../styles/theme.css';
 import BackgroundShapes from '../components/backgroundShapes';
 import SideLinks from '../components/sideLinks';
-import Navigation from '../components/navigation';
+import Navigation from '../components/navigation.astro';
 ---
 
 <html lang={'en'}>
@@ -14,7 +14,7 @@ import Navigation from '../components/navigation';
         <BackgroundShapes />
         <SideLinks />
         <main><slot /></main>
-        <Navigation />
+        <Navigation client:load />
     </body>
 </html>
 
