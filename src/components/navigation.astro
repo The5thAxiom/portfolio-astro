@@ -1,0 +1,48 @@
+---
+import './navigation.css';
+
+type page = {
+    title: string;
+    link: string;
+};
+
+const pages: page[] = [
+    {
+        title: 'Home',
+        link: '/'
+    },
+    {
+        title: 'About Me',
+        link: '/about'
+    },
+    {
+        title: 'Experience\n&&\nEducation',
+        link: '/education'
+    },
+    {
+        title: 'My\nProjects',
+        link: '/projects'
+    },
+    {
+        title: 'Contact Me',
+        link: '/contact'
+    }
+];
+const currentPath: string = new URL(Astro.request.url).pathname;
+
+---
+
+<nav id='navigation'>
+    {pages.map((page, index) => (
+        <a
+            href={page.link}
+            class={`navigation-link ${
+                currentPath === page.link
+                    ? 'current-page'
+                    : 'other-page'
+            }`}
+        >
+            {page.title}
+        </a>
+    ))}
+</nav>

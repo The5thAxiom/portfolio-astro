@@ -1,0 +1,53 @@
+/* *** Basic *** */
+
+.sidelinks-circle {
+    display: block;
+    width: var(--sidelinks-link-radius);
+    height: var(--sidelinks-link-radius);
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    background-color: black;
+}
+
+a.sidelinks-circle svg {
+    display: block;
+    height: calc(var(--sidelinks-link-radius) / 2);
+    width: calc(var(--sidelinks-link-radius) / 2);
+    fill: var(--main-orange);
+}
+
+a.sidelinks-circle:hover svg {
+    fill: var(--main-pink);
+}
+
+nav#sidelinks {
+    position: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    row-gap: var(--sidelinks-link-radius);
+    column-gap: var(--sidelinks-link-radius);
+}
+
+/* *** PCs *** */
+@media only screen and (min-width: 600px) {
+    nav#sidelinks {
+        width: calc(var(--wave-content-width) + var(--wave-radius) * 0.5);
+        height: calc(100vh - var(--wave-radius));
+        flex-direction: column;
+    }
+}
+
+/* *** Phones *** */
+@media only screen and (max-width: 600px) {
+    nav#sidelinks {
+        width: 100vw;
+        height: calc(var(--wave-content-width) + var(--wave-radius) * 0.5);
+        flex-direction: row;
+    }
+}
