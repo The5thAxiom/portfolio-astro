@@ -1,0 +1,122 @@
+/* *** Basic *** */
+
+#bg-wave {
+    position: fixed;
+    background-color: var(--main-orange);
+}
+
+#bg-circle-one {
+    position: fixed;
+    background-color: var(--main-blue);
+    width: calc(var(--circle-one-radius) * 2);
+    height: calc(var(--circle-one-radius) * 2);
+    border-radius: calc(var(--circle-one-radius) * 2);
+}
+
+#bg-circle-two {
+    position: fixed;
+    background-color: var(--main-blue);
+    width: calc(var(--circle-two-radius) * 2);
+    height: calc(var(--circle-two-radius) * 2);
+    border-radius: calc(var(--circle-two-radius) * 2);
+}
+
+#bg-circle-three {
+    position: fixed;
+    background-color: var(--main-blue);
+    width: calc(var(--circle-three-radius) * 2);
+    height: calc(var(--circle-three-radius) * 2);
+    border-radius: calc(var(--circle-three-radius) * 2);
+}
+
+/* *** PCs *** */
+@media only screen and (min-width: 600px) {
+    #bg-wave {
+        width: var(--wave-width);
+        height: calc(100vh - var(--wave-radius));
+    }
+
+    .bg-wave-circle {
+        height: var(--wave-radius);
+    }
+
+    .colour {
+        background-color: var(--main-orange);
+        transform: translateX(calc(var(--wave-width) - 2px));
+        border-radius: 0 var(--wave-radius) var(--wave-radius) 0;
+        width: calc(var(--wave-radius) / 2);
+        z-index: 100;
+    }
+
+    .no-colour {
+        transform: translateX(
+            calc(var(--wave-width) - (var(--wave-radius) / 2) + 2px)
+        );
+        width: calc(var(--wave-radius) / 2 + 1px);
+        background-color: var(--light-blue);
+        border-radius: var(--wave-radius) 0 0 var(--wave-radius);
+    }
+
+    #bg-circle-one {
+        transform: translate(
+            calc(50vw - var(--circle-one-radius)),
+            calc(-1 * var(--circle-one-radius) / 4)
+        );
+    }
+
+    #bg-circle-two {
+        transform: translate(
+            calc(100vw - var(--circle-two-radius) * 1.5),
+            calc(100vh - var(--circle-two-radius) * 1.2)
+        );
+    }
+
+    #bg-circle-three {
+        transform: translate(calc(30vw), calc(80vh));
+    }
+}
+
+/* *** Phones *** */
+@media only screen and (max-width: 600px) {
+    #bg-wave {
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        height: var(--wave-width);
+    }
+
+    .bg-wave-circle {
+        width: var(--wave-radius);
+    }
+
+    .colour {
+        background-color: var(--main-orange);
+        transform: translateY(calc(var(--wave-width) - 2px));
+        border-radius: 0 0 var(--wave-radius) var(--wave-radius);
+        height: calc(var(--wave-radius) / 2);
+    }
+
+    .no-colour {
+        transform: translateY(
+            calc(var(--wave-width) - (var(--wave-radius) / 2) + 2px)
+        );
+        height: calc(var(--wave-radius) / 2);
+        background-color: var(--light-blue);
+        border-radius: var(--wave-radius) var(--wave-radius) 0 0;
+    }
+
+    #bg-circle-one {
+        transform: translate(calc(50px - var(--circle-one-radius)), 30vh);
+    }
+
+    #bg-circle-two {
+        transform: translate(
+            calc(100vw - var(--circle-two-radius) * 1.5),
+            calc(100vh - var(--circle-two-radius) * 1.2)
+        );
+    }
+
+    #bg-circle-three {
+        transform: translate(80vw, 30vh);
+    }
+}

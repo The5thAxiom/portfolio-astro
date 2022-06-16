@@ -1,5 +1,26 @@
-<html lang="en">
-    <head><title>index</title></head>
+---
+import Main from '../layouts/main.astro';
+import Imp from '../components/imp';
+import CycleTrough from '../components/cycleThrough';
 
-    <body>como estas bebe!?</body>
-</html>
+const roles: string[] = [
+    'web dev enthusiast',
+    'UG Student at VIT Chennai',
+    'Member of Linux Club',
+    'computer geek',
+    'cook',
+    'food lover',
+    'language nerd'
+];
+---
+
+<Main>
+    <h1>Hello 👋, I am Samridh!</h1>
+    <span id="cycling-roles">
+        I am a:{' '}
+        <Imp>
+            <CycleTrough array={roles} />
+        </Imp>
+    </span>
+</Main>
+

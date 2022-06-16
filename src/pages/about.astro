@@ -1,0 +1,41 @@
+---
+import Main from "../layouts/main.astro";
+import Imp from "../components/imp";
+const name= 'Samridh Anand Paatni';
+    const intro= 'I like to code, learn about languages, play table tennis and ❤️ to cook!'
+
+    const programmingSkills= [
+        'javascript',
+        'html',
+        'css',
+        'python',
+        'php',
+        'C/C++',
+        'Java',
+        'Scala',
+    ]
+    const techSkills= ['vim', 'LaTeX', 'git/github', 'bash shell']
+---
+
+<Main>
+    <h1>About me</h1>
+    <p>
+        Hello reader! I am <Imp>{name}</Imp>. I'm a UG
+        Student at <Imp>VIT Chennai</Imp>, pursuing a{' '}
+        <Imp>BTech in Computer Science and Engineering</Imp>.{' '}
+        {intro}
+    </p>
+    <h1>Things I am good at</h1>
+    <h2>Programming:</h2>
+    <ul>
+        {programmingSkills.map((skill, index) => (
+            <li>{skill}</li>
+        ))}
+    </ul>
+    <h2>Tech</h2>
+    <ul>
+        {techSkills.map((skill, index) => (
+            <li>{skill}</li>
+        ))}
+    </ul>
+</Main>

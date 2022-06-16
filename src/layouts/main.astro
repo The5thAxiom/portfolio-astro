@@ -1,0 +1,20 @@
+---
+import '../styles/globals.css';
+import '../styles/theme.css';
+import BackgroundShapes from '../components/backgroundShapes';
+import SideLinks from '../components/sideLinks';
+import Navigation from '../components/navigation';
+---
+
+<html lang={'en'}>
+    <head>
+        <title>Portfolio!?</title>
+    </head>
+    <body>
+        <BackgroundShapes />
+        <SideLinks />
+        <main><slot /></main>
+        <Navigation />
+    </body>
+</html>
+

@@ -1,0 +1,128 @@
+/* *** Basic *** */
+:root {
+    --h1-font-size: 4rem;
+    --sidelinks-link-radius: min(calc(100vw / 10), 50px);
+}
+
+body {
+    background-color: var(--light-blue);
+    width: 100%;
+    height: 100%;
+    min-height: -webkit-fill-available;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100vh;
+    min-height: -webkit-fill-available;
+}
+
+main {
+    position: fixed;
+    word-wrap: break-word;
+    overflow-y: scroll;
+}
+
+#cycling-roles {
+    font-size: 2rem;
+}
+
+div.main-picture-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: calc(
+        var(--h1-font-size) * 0.67 / 2
+    ); /* to match the h1's margin */
+}
+
+/* *** PCs *** */
+@media only screen and (min-width: 600px) {
+    :root {
+        --circle-one-radius: min(calc(100vw / 5), calc(100vh / 3));
+        --circle-two-radius: min(calc(100vw / 4), calc(100vh / 2));
+        --circle-three-radius: min(calc(100vw / 8), calc(100vh / 5));
+        --num-waves: 5;
+        --wave-radius: calc(100vh / (var(--num-waves) * 2));
+        --wave-content-width: calc(100vw / 10);
+        --wave-width: calc(var(--wave-content-width) + var(--wave-radius));
+        --full-wave-width: calc(var(--wave-width) + var(--wave-radius) * 0.5);
+        --image-size: 250px;
+    }
+    main {
+        width: calc(100vw - var(--full-wave-width) - 20px);
+        height: calc(100vh - var(--wave-radius) - 30px);
+        margin-left: calc(var(--full-wave-width) + 10px);
+        padding-right: 10px;
+        padding-bottom: 30px;
+    }
+
+    img.main-picture {
+        width: var(--image-size);
+        height: var(--image-size);
+        border-radius: var(--image-size);
+    }
+}
+
+/* *** Phones *** */
+@media only screen and (max-width: 600px) {
+    body,
+    html {
+        height: calc(100vh - var(--wave-radius));
+    }
+    :root {
+        --circle-one-radius: min(calc(100vh / 5), calc(100vw / 3));
+        --circle-two-radius: min(calc(100vh / 4), calc(100vw / 2));
+        --circle-three-radius: min(calc(100vh / 8), calc(100vw / 5));
+        --num-waves: 5;
+        --wave-radius: calc(100vw / (var(--num-waves) * 2));
+        --wave-content-width: calc(100vh / 8);
+        --wave-width: calc(var(--wave-content-width) + var(--wave-radius));
+        --full-wave-width: calc(var(--wave-width) + var(--wave-radius) * 0.5);
+        --image-size: 250px;
+    }
+
+    main {
+        width: calc(100vw - 20px);
+        height: calc(
+            100vh - var(--full-wave-width) - var(--wave-radius) - 30px
+        );
+        margin-top: var(--full-wave-width);
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 30px;
+    }
+
+    img.main-picture {
+        width: var(--image-size);
+        height: var(--image-size);
+        border-radius: var(--image-size);
+    }
+}
+
+/* *** smallest *** */
+@media only screen and (max-width: 500px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+/* *** Utility *** */
+
+h1 {
+    font-size: var(--h1-font-size);
+    margin-bottom: calc(var(--h1-font-size) * 0.67 / 2);
+}
+
+a.project-icon-link svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    fill: var(--main-orange);
+}
+
+a.project-icon-link:hover svg {
+    fill: var(--main-pink);
+}
+
